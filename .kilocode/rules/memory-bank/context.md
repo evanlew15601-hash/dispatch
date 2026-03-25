@@ -1,72 +1,67 @@
-# Active Context: Next.js Starter Template
+# Active Context: Dispatch Game Engine Implementation
 
 ## Current State
 
-**Template Status**: ✅ Ready for development
+**Implementation Status**: ✅ Complete game engine installed
 
-The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. It's ready for AI-assisted expansion to build any type of application.
+The dispatch repository now contains the complete game-engine-core implementation, a tactical simulation game featuring agent management, dispatch systems, mission resolution, and strategic gameplay mechanics.
 
 ## Recently Completed
 
-- [x] Base Next.js 16 setup with App Router
-- [x] TypeScript configuration with strict mode
-- [x] Tailwind CSS 4 integration
-- [x] ESLint configuration
-- [x] Memory bank documentation
-- [x] Recipe system for common features
+- [x] Replaced kilocode template with complete game-engine-core implementation
+- [x] Installed full game engine with TypeScript/Vite/React architecture
+- [x] Added all game systems: incident spawning, mission dispatch, agent management
+- [x] Added UI components: GameApp, HoloMap, PhaseReportModal, and shadcn/ui components
+- [x] Added game mechanics: coverage systems, intel gathering, recruitment, save/load
+- [x] Added comprehensive dispatch and simulation systems
+- [x] Added testing and build configurations
 
 ## Current Structure
 
 | File/Directory | Purpose | Status |
 |----------------|---------|--------|
-| `src/app/page.tsx` | Home page | ✅ Ready |
-| `src/app/layout.tsx` | Root layout | ✅ Ready |
-| `src/app/globals.css` | Global styles | ✅ Ready |
+| `src/` | Complete game engine source code | ✅ Complete |
+| `src/App.tsx` | Main application component | ✅ Ready |
+| `src/ui/GameApp.tsx` | Main game interface with dispatch controls | ✅ Ready |
+| `src/engine/` | Core engine systems (dispatch, tick, world) | ✅ Ready |
+| `src/game/` | Game-specific logic and systems | ✅ Ready |
+| `src/components/ui/` | shadcn/ui component library | ✅ Ready |
 | `.kilocode/` | AI context & recipes | ✅ Ready |
 
 ## Current Focus
 
-The template is ready. Next steps depend on user requirements:
+The game engine is fully implemented and ready for play/testing. Next steps could include:
 
-1. What type of application to build
-2. What features are needed
-3. Design/branding preferences
+1. Testing gameplay mechanics and balance
+2. Adding new features or game modes
+3. Improving UI/UX based on user feedback
+4. Optimizing performance
+5. Adding multiplayer or networking capabilities
 
 ## Quick Start Guide
 
-### To add a new page:
+### To run the game:
 
-Create a file at `src/app/[route]/page.tsx`:
-```tsx
-export default function NewPage() {
-  return <div>New page content</div>;
-}
+```bash
+npm install
+npm run dev
 ```
 
-### To add components:
+### To build for production:
 
-Create `src/components/` directory and add components:
-```tsx
-// src/components/ui/Button.tsx
-export function Button({ children }: { children: React.ReactNode }) {
-  return <button className="px-4 py-2 bg-blue-600 text-white rounded">{children}</button>;
-}
+```bash
+npm run build
 ```
 
-### To add a database:
+### To run tests:
 
-Follow `.kilocode/recipes/add-database.md`
-
-### To add API routes:
-
-Create `src/app/api/[route]/route.ts`:
-```tsx
-import { NextResponse } from "next/server";
-
-export async function GET() {
-  return NextResponse.json({ message: "Hello" });
-}
+```bash
+npm run test
 ```
+
+### To add new features:
+
+Follow the existing patterns in `/src/game/systems/` and `/src/game/dispatchers/` for new game systems and dispatchers.
 
 ## Available Recipes
 
@@ -84,4 +79,5 @@ export async function GET() {
 
 | Date | Changes |
 |------|---------|
+| 2025-03-25 | Replaced kilocode template with complete game-engine-core implementation |
 | Initial | Template created with base setup |
